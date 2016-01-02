@@ -61,7 +61,7 @@ set colorcolumn=+1 " show vertical line on column wrap
 set scrolloff=5    " scroll off 5 lines near cursor
 set title          " use title
 set number         " show line numbers
-
+let g:auto_solarize_disabled = 1
 "" syntax
 set cinkeys-=0#                         " don't force # indentation
 set ignorecase                          " by default ignore case
