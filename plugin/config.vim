@@ -37,7 +37,7 @@ set splitright    " split right instead of left
 set backup                        " enable backup file
 set undofile                      " enable undo file
 set noswapfile                    " disable swap file
-set undodir=/tmp/vim-$USER-undo/  " Undodir
+set undodir=/tmp/vim-$USER/undo/  " Undodir
 set backupdir=/tmp/vim-$USER/backup/ " Backupdir.
 set directory=/tmp/vim-$USER/swap/   " Swapfile.
 set viminfo+=n/tmp/vim-$USER/viminfo " viminfo
