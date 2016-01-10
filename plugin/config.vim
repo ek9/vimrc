@@ -100,7 +100,7 @@ augroup END
 
 
 "" spelling
-set spelllang=en,nl,lt                  " languages
+set spelllang=en         " languages
 
 " word wrap
 set iskeyword+=_,$,@,%,# " not word dividers
