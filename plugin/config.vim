@@ -1,3 +1,7 @@
+"" ek9/vimrc - https://github.com/ek9/vimrc
+"" config.vim
+"" vimrc configuration inspired by tpope/vim-sensible
+
 " vim-config
 if exists('g:loaded-vim_config')
   finish
@@ -212,20 +216,3 @@ if bufwinnr(1)
 vnoremap < <C-W><
 endif
 
-
-""" plugins
-
-"" NERDTree
-" autostart on launch if no file specified
-autocmd vimenter * if !argc() | NERDTree | endif
-" autoclose if the only window that is open is NERDTree
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-" map Ctrl+n to NERDTree
-map <C-n> :NERDTreeToggle<CR>
-
-" css3 plugin
-augroup VimCSS3Syntax
-    autocmd!
-
-    autocmd FileType css setlocal iskeyword+=-
-augroup END
