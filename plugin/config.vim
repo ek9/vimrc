@@ -19,6 +19,15 @@ set autoindent                 " preserve indentation
 set backspace=indent,eol,start " smart backspace
 syntax on                      " syntax highlighting
 
+" syntastic plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 0
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 """ configuration
 
@@ -138,6 +147,11 @@ nnoremap <F4> :GundoToggle<CR>
 
 " map <F5> for Toggle Whitespace
 nnoremap <F5> :ToggleWhitespace<CR>
+
+" map Ctrl+L to line open / line close
+nnoremap <C-l> :lopen<CR>
+vnoremap <C-l> :lopen<CR>
+inoremap <C-l> <Esc>:lopen<CR>
 
 " use :w!! for sudo write
 cnoremap w!! w !sudo tee % >/dev/null
