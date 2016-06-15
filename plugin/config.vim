@@ -2,12 +2,92 @@
 "" config.vim
 "" vimrc configuration inspired by tpope/vim-sensible
 
-" vim-config
 if exists('g:loaded-vim_config')
   finish
 else
   let g:loaded_vim_config = 1
 endif
+
+"" plugins
+"" CORE
+Bundle 'scrooloose/nerdtree'
+Bundle 'sjl/gundo.vim'
+
+"" THEMING
+Bundle 'altercation/vim-colors-solarized'
+Bundle 'ek9/vim-auto-solarize'
+
+"" STATUSBAR
+Bundle 'itchyny/lightline.vim'
+"Bundle 'mkitt/tabline.vim'
+Bundle 'kien/tabman.vim'
+
+"" DEV
+Bundle 'editorconfig/editorconfig-vim'
+" git wrapper
+Bundle 'tpope/vim-fugitive'
+" vim markdown and document converter
+Bundle 'vim-pandoc/vim-pandoc'
+Bundle 'vim-pandoc/vim-pandoc-syntax'
+" syntax checking for vim
+Bundle 'scrooloose/syntastic'
+Bundle 'myint/syntastic-extras'
+" easy way to comment lines (Ctrl+C, Ctrl+X)
+Bundle 'vim-scripts/comments.vim'
+" provides support for .env and Procfile
+Bundle 'tpope/vim-dotenv'
+" Use cs macro to surrount lines with tags
+Bundle 'tpope/vim-surround'
+" :StripWhitespace
+Bundle 'ntpeters/vim-better-whitespace'
+" Alignment and filtering via :Tab
+Bundle 'godlygeek/tabular'
+" Better support PKGBUILD files (archlinux)
+Bundle 'Firef0x/PKGBUILD.vim'
+" tmux.conf support
+Bundle 'tmux-plugins/vim-tmux'
+" tmux focus event support
+Bundle 'tmux-plugins/vim-tmux-focus-events'
+" vim css3 support
+Bundle 'hail2u/vim-css3-syntax'
+" vim sass
+Bundle 'tpope/vim-haml'
+"" SALT
+" faster yaml syntx highlight
+Bundle 'stephpy/vim-yaml'
+" vim for editing salt files
+Bundle 'saltstack/salt-vim'
+Bundle 'mustache/vim-mustache-handlebars'
+Bundle 'joukevandermaas/vim-ember-hbs'
+
+" nfo
+Bundle 'summivox/vim-nfo'
+
+" syntax
+" web development
+Bundle 'pangloss/vim-javascript'
+Bundle 'greatghoul/vim-web-indent'
+
+" php
+Bundle '2072/vim-syntax-for-PHP.git'
+"Bundle 'joonty/vim-xdebug.git'
+Bundle 'rayburgemeestre/phpfolding.vim'
+Bundle 'stephpy/vim-php-cs-fixer'
+"Bundle 'stephpy/vim-phpdoc'
+"Bundle 'afternoon/vim-phpunit'
+" symfony framework
+Bundle 'evidens/vim-twig'
+Bundle 'docteurklein/vim-symfony'
+
+au BufNewFile,BufRead *.yaml,*.yml,*.sls so ~/.vim/bundle/vim-yaml/after/ftplugin/yaml.vim
+set smarttab
+set expandtab
+
+let g:EditorConfig_exclude_patterns = ['fugitive://.*']
+
+set laststatus=2 " Always display the statusline in all windows
+set showtabline=2 " Always display the tabline, even if there is only one tab
+set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
 
 " Use :help 'option' to see the documentation for the given option.
 
@@ -216,3 +296,21 @@ if bufwinnr(1)
 vnoremap < <C-W><
 endif
 
+
+
+"" plugin config
+
+"" NERDTree
+" autostart on launch if no file specified
+autocmd vimenter * if !argc() | NERDTree | endif
+" autoclose if the only window that is open is NERDTree
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" map Ctrl+n to NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+"" css3 plugin
+augroup VimCSS3Syntax
+    autocmd!
+
+    autocmd FileType css setlocal iskeyword+=-
+augroup END
