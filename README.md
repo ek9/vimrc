@@ -6,11 +6,24 @@ vundle plugin. It is inspired by [tpope/vim-sensible][1].
 
 ## Install
 
-Install `ek9/vimrc` using Vundle or Pathogen:
+Install `ek9/vimrc` using Vundle:
 
 ```vim
+"" vundle setup - keep this at the very start
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+filetype plugin indent on
+Bundle 'gmarik/vundle'
+
+"" plugins
+" generic config
 Bundle 'ek9/vimrc'
 ```
+
+Start `vim` and exeecute `:BundleInstall`.
+
+*Note!* Make sure vundle is installed in `~/.vim.bundle/vundle`.
 
 ## Authors
 
