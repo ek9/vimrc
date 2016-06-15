@@ -60,7 +60,28 @@ This `vimrc` plugin enables the following features and tweaks:
 - Search tweaks to highlight results, ignore casing, starts showing results as
   you search.
 - Find and replace is global by default
-    
+- Disable default behaviour of paste writing overwritting content to clipboard
+
+
+## Hotkeys
+
+Hotkeys and aliases added by this config:
+
+- Disable arrow keys (to force use of `h/j/k/l`)
+- Enable tab navitagion with Ctrl+h/j/k/l
+- Enable split window navigation with Shift+h/j/k/l
+- `Ctrl+s` split window vertically
+- `Ctrl+v` split window horizontally
+- `<`/`>` adjust the size of split windows
+- Disable `F1` / `Q` help keys
+- `F1` toggle spellcheck
+- `F2` toggle paste mode
+- `F3` toggle line numbers
+- `F4` toggle gundo
+- `F5` toggle whitespace display
+- `Ctrl+L` - line open/close
+- `:w!!` - write file with `sudo`
+
 ## Authors
 
 Copyright (c) 2015-2016 ek9 <dev@ek9.co> (https://ek9.co). Copyright (c) Tim
