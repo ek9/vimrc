@@ -1,29 +1,20 @@
 ek9/vimrc
 =========
 
-[ek9/vimrc][0] is a personal `.vimrc` configuration published as a pathogen /
-vundle plugin. It is inspired by [tpope/vim-sensible][1].
+[ek9/vimrc][0] is a personal `.vimrc` configuration published as a vim plugin.
+It is inspired by [tpope/vim-sensible][1].
 
 ## Install
 
-Install `ek9/vimrc` using Vundle:
+Install `ek9/vimrc` using [vim-plug][2]:
 
 ```vim
-"" vundle setup - keep this at the very start
-filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-filetype plugin indent on
-Bundle 'gmarik/vundle'
-
-"" plugins
-" generic config
-Bundle 'ek9/vimrc'
+call plug#begin()
+Plug 'ek9/vimrc'
+call plug#end()
 ```
 
-Start `vim` and exeecute `:BundleInstall`.
-
-*Note!* Make sure vundle is installed in `~/.vim.bundle/vundle`.
+You can also use [Vundle][3] or [Pathogen][4].
 
 ## Features
 
@@ -89,3 +80,6 @@ Pope for parts of code from [tpope/vim-sensible][1] project.
 
 [0]: https://github.com/ek9/vimrc
 [1]: https://github.com/tpope/vim-sensible
+[2]: https://github.com/junegunn/vim-plug
+[3]: https://github.com/VundleVim/Vundle.vim
+[4]: 
