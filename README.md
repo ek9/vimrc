@@ -16,7 +16,8 @@ Plug 'ek9/vimrc'
 call plug#end()
 ```
 
-You can also use [Vundle][3] or [Pathogen][4].
+**Note!** It is advised to load `ek9/vimrc` at the end of your plugin list. You
+can also use [Vundle][3] or [Pathogen][4] to install the plugin.
 
 ## Features
 
