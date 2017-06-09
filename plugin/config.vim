@@ -8,14 +8,9 @@ else
   let g:loaded_vim_config = 1
 endif
 
-set laststatus=2 " Always display the statusline in all windows
-set showtabline=2 " Always display the tabline, even if there is only one tab
-set noshowmode " Hide the default mode text (e.g. -- INSERT -- below the statusline)
-
 " Use :help 'option' to see the documentation for the given option.
 
 """ provided by tpope/vim-sensible
-set laststatus=2               " always show statusline
 set encoding=utf-8
 set showcmd                    " show commands typed
 set autoread                   " refresh if changed
@@ -26,15 +21,10 @@ set autoindent                 " preserve indentation
 set backspace=indent,eol,start " smart backspace
 syntax on                      " syntax highlighting
 
-" syntastic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 0
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+let g:syntastic_check_on_wq = 1
 
 """ configuration
 
