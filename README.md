@@ -4,6 +4,8 @@ ek9/vimrc
 [ek9/vimrc][0] is a personal `.vimrc` configuration published as a vim plugin.
 It is inspired by [tpope/vim-sensible][1].
 
+Part of [ek9/dotfiles][10] collection.
+
 ## Install
 
 Install `ek9/vimrc` using [vim-plug][2]:
@@ -82,4 +84,5 @@ Pope for parts of code from [tpope/vim-sensible][1] project.
 [1]: https://github.com/tpope/vim-sensible
 [2]: https://github.com/junegunn/vim-plug
 [3]: https://github.com/VundleVim/Vundle.vim
-[4]: 
+[4]: https://github.com/tpope/vim-pathogen
+[10]: https://github.com/ek9/dotfiles
